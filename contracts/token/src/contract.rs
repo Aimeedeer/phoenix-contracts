@@ -9,6 +9,11 @@ use soroban_sdk::token::{self, Interface as _};
 use soroban_sdk::{contract, contractimpl, Address, Env, String};
 use soroban_token_sdk::metadata::TokenMetadata;
 use soroban_token_sdk::TokenUtils;
+use soroban_sdk::contractmeta;
+
+contractmeta!(key="git_repo", val="https://github.com/Aimeedeer/phoenix-contracts.git");
+contractmeta!(key="git_branch", val="test-repro");
+contractmeta!(key="project_name", val="phoenix-contracts");
 
 fn check_nonnegative_amount(amount: i128) {
     if amount < 0 {
